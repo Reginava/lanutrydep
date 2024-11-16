@@ -1,0 +1,129 @@
+html,
+body {
+  height: 100%;
+  padding-top: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  /* Asigna proporciones para cada sección */
+  height: 100vh;
+  /* Usa el 100% del alto de la ventana */
+  align-items: center;
+}
+
+/* Bootstrap define las variables para la barra de navegación con prefijos y configuraciones de Sass como --#{$prefix}navbar-padding-x donde El #{$prefix} es un placeholder de Sass que generalmente se traduce en --bs-, el prefijo predeterminado en Bootstrap.
+Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. */
+
+/* Mostrar solo el logo grande en pantallas grandes */
+.navbar {
+  --bs-navbar-hover-color: #f15a28;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.logo-chico {
+  display: none;
+}
+
+.logo-grande {
+  width: 200px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 6% 21% 3% 21%;
+}
+
+main img {
+  width: 400px;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+  font-style: italic;
+  font-size: 22px;
+  margin-bottom: 0%;
+}
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: #f15a28;
+  /* Color de las figuras */
+  font-size: 18px;
+  /* Tamaño de las figuras */
+  position: relative;
+  margin-bottom: 2%;
+}
+
+
+main p {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+@media(max-width:768px) {
+
+  .contenedor {
+    grid-template-rows: 1fr 1fr 1fr;
+    /* Distribuye el espacio equitativamente */
+  }
+
+  .logo-grande {
+    display: none;
+  }
+
+  .logo-chico {
+    display: block;
+    width: 100px;
+  }
+
+  main {
+    margin: 5% 10% 5% 10%;
+  }
+
+  main img {
+    width: 250px;
+  }
+
+  h2 {
+    font-size: small;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    color: #f15a28;
+    font-size: 12px;
+    position: relative;
+    margin-bottom: 2%;
+  }
+
+  main p {
+    font-size: small;
+    line-height: 1.4;
+  }
+
+  footer {
+    font-size: x-small;
+  }
+}

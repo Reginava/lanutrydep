@@ -1,0 +1,148 @@
+html,
+body {
+  height: 100%;
+  padding-top: 0;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  /* Asigna proporciones para cada sección */
+  height: 100vh;
+  /* Usa el 100% del alto de la ventana */
+  align-items: center;
+}
+
+
+.navbar {
+  --bs-navbar-hover-color: #f15a28;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Mostrar solo el logo grande en pantallas grandes */
+.logo-chico {
+  display: none;
+}
+
+.logo-grande {
+  width: 200px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 6% 21% 3% 21%;
+}
+
+main img {
+  width: 650px;
+  align-content: center;
+}
+
+h2 {
+  text-align: center;
+  font-style: italic;
+  font-size: 22px;
+  margin-bottom: 0%;
+}
+
+#intro {
+  margin-top: 1%;
+}
+
+h4 {
+  margin-top: 3%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: #f15a28;
+  /* Color de las figuras */
+  font-size: 18px;
+  /* Tamaño de las figuras */
+  position: relative;
+  margin-bottom: 2%;
+}
+
+
+main p {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+main li {
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.btn {
+  --bs-btn-bg: #009688;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: #f15a28;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  font-size: 15px;
+}
+
+@media(max-width:768px) {
+
+  .contenedor {
+    grid-template-rows: 1fr 1fr 1fr;
+    /* Distribuye el espacio equitativamente */
+  }
+
+  .logo-grande {
+    display: none;
+  }
+
+  .logo-chico {
+    display: block;
+    width: 100px;
+  }
+
+  main {
+    margin: 5% 10% 5% 10%;
+  }
+
+  main img {
+    width: 250px;
+  }
+
+  h2 {
+    font-size: small;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    color: #f15a28;
+    font-size: 12px;
+    position: relative;
+    margin-bottom: 2%;
+  }
+
+  main p {
+    font-size: small;
+    line-height: 1.4;
+  }
+
+  footer {
+    font-size: x-small;
+  }
+}

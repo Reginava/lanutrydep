@@ -1,3 +1,4 @@
+/* Estilos generales */
 html,
 body {
   height: 100%;
@@ -9,25 +10,25 @@ body {
   background-color: #fafafa;
 }
 
+/* Contenedor principal */
 .contenedor {
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
-  /* Asigna proporciones para cada sección */
   height: 100vh;
-  /* Usa el 100% del alto de la ventana */
   align-items: center;
 }
 
-/* Bootstrap define las variables para la barra de navegación con prefijos y configuraciones de Sass como --#{$prefix}navbar-padding-x donde El #{$prefix} es un placeholder de Sass que generalmente se traduce en --bs-, el prefijo predeterminado en Bootstrap.
-Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. */
-
-/* Mostrar solo el logo grande en pantallas grandes */
+/* Navbar y logos */
 .navbar {
   --bs-navbar-hover-color: #f15a28;
 }
 
 .navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
 }
 
 .logo-chico {
@@ -38,37 +39,38 @@ Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. 
   width: 200px;
 }
 
+/* Estilos de main */
 main {
   display: flex;
-  align-items: center;
   flex-direction: column;
   margin: 6% 21% 3% 21%;
 }
 
-main img {
-  width: 400px;
-  align-content: center;
+main #protected-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-h2 {
+main #protected-content img {
+  width: 350px;
+}
+
+main #password-protect h2 {
+  text-align: center;
+  font-style: normal;
+  font-size: 22px;
+  margin-bottom: 0%;
+}
+
+#protected-content h2 {
   text-align: center;
   font-style: italic;
   font-size: 22px;
   margin-bottom: 0%;
 }
-
-
-.divider {
-  display: flex;
-  align-items: center;
-  color: #f15a28;
-  /* Color de las figuras */
-  font-size: 18px;
-  /* Tamaño de las figuras */
-  position: relative;
-  margin-bottom: 2%;
-}
-
 
 main p {
   text-align: center;
@@ -76,16 +78,40 @@ main p {
   line-height: 1.6;
 }
 
+/* Formularios y botones */
+.form-control {
+  text-align: center;
+}
+
+.btn {
+  --bs-btn-bg: #009688;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: #f15a28;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-font-size: 18px;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  justify-content: center;
+  color: #f15a28;
+  font-size: 18px;
+  position: relative;
+  margin-bottom: 2%;
+}
+
+/* Footer */
 footer {
+  width: 100%;
   text-align: center;
   font-size: 15px;
 }
 
-@media(max-width:768px) {
-
+/* Media queries */
+@media (max-width: 768px) {
   .contenedor {
     grid-template-rows: 1fr 1fr 1fr;
-    /* Distribuye el espacio equitativamente */
   }
 
   .logo-grande {
@@ -110,11 +136,8 @@ footer {
   }
 
   .divider {
-    display: flex;
     align-items: center;
-    color: #f15a28;
     font-size: 12px;
-    position: relative;
     margin-bottom: 2%;
   }
 

@@ -1,20 +1,19 @@
 /* Estilos generales */
-html,
 body {
   height: 100%;
   padding-top: 0;
   font-family: 'Karla', sans-serif;
-}
-
-body {
   background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
 }
 
 /* Contenedor principal */
 .contenedor {
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  /* Cambiado para ajustar según el contenido */
+  min-height: 100vh;
   align-items: center;
 }
 
@@ -27,9 +26,25 @@ body {
   justify-content: flex-end;
 }
 
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #009688;
+}
+
 a {
   text-decoration: none;
+  color: #aa1945;
 }
+
+.enlace-hover {
+  color: #aa1945;
+  text-decoration: none;
+}
+
+.enlace-hover:hover {
+  color: #f15a28;
+  text-decoration: none;
+}
+
 
 .logo-chico {
   display: none;
@@ -39,43 +54,61 @@ a {
   width: 200px;
 }
 
+
 /* Estilos de main */
 main {
   display: flex;
   flex-direction: column;
-  margin: 6% 21% 3% 21%;
+  margin: 6% 15% 3% 15%;
+  justify-content: center;
 }
 
-main #protected-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+
+main .accordion p {
+  text-align: left;
 }
 
 main #protected-content img {
-  width: 350px;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-main #password-protect h2 {
+main #password-protect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 30vh;
+}
+
+main #password-protect .row {
+  width: 100%;
+  /* Opcional: para que las filas internas ocupen el ancho completo del contenedor */
+}
+
+main #aclaracion {
+  font-size: 12px;
+  margin-top: 15px;
   text-align: center;
-  font-style: normal;
-  font-size: 22px;
-  margin-bottom: 0%;
 }
 
-#protected-content h2 {
+#protected-content h5 {
   text-align: center;
   font-style: italic;
-  font-size: 22px;
   margin-bottom: 0%;
+}
+
+#collapseThree {
+  min-height: auto;
 }
 
 main p {
-  text-align: center;
-  font-size: 17px;
-  line-height: 1.6;
+  text-align: justify;
+}
+
+.subtitle {
+  font-weight: bold;
 }
 
 /* Formularios y botones */
@@ -88,7 +121,11 @@ main p {
   --bs-btn-border-color: transparent;
   --bs-btn-hover-bg: #f15a28;
   --bs-btn-hover-border-color: transparent;
-  --bs-btn-font-size: 18px;
+}
+
+.accordion {
+  --bs-accordion-active-color: #fff;
+  --bs-accordion-active-bg: #009688;
 }
 
 /* Divider */
@@ -96,7 +133,6 @@ main p {
   display: flex;
   justify-content: center;
   color: #f15a28;
-  font-size: 18px;
   position: relative;
   margin-bottom: 2%;
 }
@@ -111,7 +147,8 @@ footer {
 /* Media queries */
 @media (max-width: 768px) {
   .contenedor {
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    /* Cambiado para ajustar según el contenido */
   }
 
   .logo-grande {

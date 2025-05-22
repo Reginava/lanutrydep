@@ -1,12 +1,15 @@
+:root {
+  --font-family-base: 'Karla', sans-serif;
+}
+
 html,
 body {
   height: 100%;
   padding-top: 0;
-  font-family: 'Karla', sans-serif;
-}
-
-body {
+  font-family: var(--font-family-base);
   background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
 }
 
 .contenedor {
@@ -49,11 +52,11 @@ main img {
   align-content: center;
 }
 
-h2 {
+#sub {
   text-align: center;
   font-style: italic;
   font-size: 22px;
-  margin-bottom: 0%;
+  margin-bottom: 0;
 }
 
 #intro {
@@ -77,16 +80,24 @@ h4 {
 
 
 main p {
-  text-align: center;
-  font-size: 17px;
+  text-align: justify;
   line-height: 1.6;
 }
 
-main li {
-  font-size: 17px;
-  line-height: 1.6;
-  text-align: justify;
+ol, ul {
+  padding-left: 0rem;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1; /* Hace que el cuerpo de la card ocupe el espacio disponible */
+}
+
 
 .btn {
   --bs-btn-bg: #009688;
@@ -97,8 +108,25 @@ main li {
 }
 
 footer {
-  text-align: center;
-  font-size: 15px;
+      display: flex;
+      justify-content: space-around;
+      min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+    }
+
+    footer p {
+      margin-top: auto;
+      font-size: 15px;
+      color: #6c757d;
+    }
+
+footer a {
+  color: #aa1945;
+  text-decoration: none;
+  font-weight: 500; /* Moderate bold */
+}
+
+footer a:hover {
+  color: #d9534f; /* A distinct red shade for differentiation */
 }
 
 @media(max-width:768px) {

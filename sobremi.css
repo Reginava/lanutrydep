@@ -9,15 +9,19 @@ body {
   background-color: #fafafa;
 }
 
+p {
+  margin: 0;
+}
+
 .contenedor {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  grid-template-rows: 1fr 2fr 1fr;
+  /* Asigna proporciones para cada sección */
+  height: 100vh;
+  /* Usa el 100% del alto de la ventana */
   align-items: center;
 }
 
-/* Bootstrap define las variables para la barra de navegación con prefijos y configuraciones de Sass como --#{$prefix}navbar-padding-x donde El #{$prefix} es un placeholder de Sass que generalmente se traduce en --bs-, el prefijo predeterminado en Bootstrap.
-Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. */
 
 /* Mostrar solo el logo grande en pantallas grandes */
 .navbar {
@@ -26,16 +30,6 @@ Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. 
 
 .navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
-}
-
-.enlace-hover {
-  color: #aa1945;
-  text-decoration: none;
-}
-
-.enlace-hover:hover {
-  color: #f15a28;
-  text-decoration: none;
 }
 
 .logo-chico {
@@ -50,7 +44,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 5% 21% 2% 21%;
+  margin: 5% 21% 5% 21%;
 }
 
 main img {
@@ -63,23 +57,6 @@ h2 {
   font-style: italic;
   font-size: 22px;
   margin-bottom: 0%;
-}
-
-#bbva p {
-  font-size: 18px;
-  line-height: 1;
-}
-
-#titulo {
-font-size: 22px;
-}
-
-.btn {
-  --bs-btn-bg: #009688;
-  --bs-btn-border-color: transparent;
-  --bs-btn-hover-bg: #f15a28;
-  --bs-btn-hover-border-color: transparent;
-  --bs-btn-font-size: 18px;
 }
 
 
@@ -101,19 +78,26 @@ main p {
   line-height: 1.6;
 }
 
-.comprobante {
-  display:flex;
-  flex-direction: row;
-}
-
-.bi-arrow-90deg-down {
-  margin: 5px 10px 0 10px;
-  transform: scalex(-1)
-}
-
 footer {
-  text-align: center;
-  font-size: 15px;
+      display: flex;
+      justify-content: space-around;
+      min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+    }
+
+    footer p {
+      margin-top: auto;
+      font-size: 15px;
+      color: #6c757d;
+    }
+
+footer a {
+  color: #aa1945;
+  text-decoration: none;
+  font-weight: 500; /* Moderate bold */
+}
+
+footer a:hover {
+  color: #d9534f; /* A distinct red shade for differentiation */
 }
 
 @media(max-width:768px) {
@@ -158,7 +142,20 @@ footer {
     line-height: 1.4;
   }
 
-  footer {
-    font-size: x-small;
+footer {
+    font-size: 12px; /* Tamaño ligeramente mayor que x-small */
+    padding: 0.8rem 0;
+  }
+  
+  /* Separa visualmente los elementos en móviles si se ve apretado */
+  footer p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  footer p::before {
+    content: "|";
+    opacity: 0; /* Oculta el separador en móviles */
   }
 }

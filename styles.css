@@ -1,13 +1,17 @@
+:root {
+  --font-family-base: 'Karla', sans-serif;
+}
+
 html,
 body {
   height: 100%;
   padding-top: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: var(--font-family-base);
+  background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
 }
 
-body {
-  background-color: #fafafa;
-}
 
 .contenedor {
   display: grid;
@@ -16,6 +20,7 @@ body {
   height: 100vh;
   /* Usa el 100% del alto de la ventana */
   align-items: center;
+  flex-direction: column;
 }
 
 /* Bootstrap define las variables para la barra de navegación con prefijos y configuraciones de Sass como --#{$prefix}navbar-padding-x donde El #{$prefix} es un placeholder de Sass que generalmente se traduce en --bs-, el prefijo predeterminado en Bootstrap.
@@ -71,15 +76,35 @@ h2 {
 
 
 main p {
+  margin: 0; /* Consolidated margin from global p styles */
   text-align: center;
   font-size: large;
   line-height: 1.6;
 }
 
 footer {
-  text-align: center;
-  font-size: 15px;
+      display: flex;
+      justify-content: space-around;
+      min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+    }
+
+    footer p {
+      margin-top: auto;
+      font-size: 15px;
+      color: #6c757d;
+    }
+
+footer a {
+  color: #aa1945;
+  text-decoration: none;
+  font-weight: 500; /* Moderate bold */
 }
+
+footer a:hover {
+  color: #d9534f; /* A distinct red shade for differentiation */
+}
+
+
 
 @media(max-width:768px) {
 

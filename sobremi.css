@@ -1,17 +1,17 @@
-:root {
-  --font-family-base: 'Karla', sans-serif;
-}
-
 html,
 body {
   height: 100%;
   padding-top: 0;
-  font-family: var(--font-family-base);
-  background-color: #fafafa;
-  line-height: 1.4;
-  font-size: 17px;
+  font-family: 'Karla', sans-serif;
 }
 
+body {
+  background-color: #fafafa;
+}
+
+p {
+  margin: 0;
+}
 
 .contenedor {
   display: grid;
@@ -20,11 +20,8 @@ body {
   height: 100vh;
   /* Usa el 100% del alto de la ventana */
   align-items: center;
-  flex-direction: column;
 }
 
-/* Bootstrap define las variables para la barra de navegación con prefijos y configuraciones de Sass como --#{$prefix}navbar-padding-x donde El #{$prefix} es un placeholder de Sass que generalmente se traduce en --bs-, el prefijo predeterminado en Bootstrap.
-Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. */
 
 /* Mostrar solo el logo grande en pantallas grandes */
 .navbar {
@@ -76,7 +73,6 @@ h2 {
 
 
 main p {
-  margin: 0; /* Consolidated margin from global p styles */
   text-align: center;
   font-size: large;
   line-height: 1.6;
@@ -103,8 +99,6 @@ footer a {
 footer a:hover {
   color: #d9534f; /* A distinct red shade for differentiation */
 }
-
-
 
 @media(max-width:768px) {
 
@@ -148,7 +142,20 @@ footer a:hover {
     line-height: 1.4;
   }
 
-  footer {
-    font-size: x-small;
+footer {
+    font-size: 12px; /* Tamaño ligeramente mayor que x-small */
+    padding: 0.8rem 0;
+  }
+  
+  /* Separa visualmente los elementos en móviles si se ve apretado */
+  footer p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  footer p::before {
+    content: "|";
+    opacity: 0; /* Oculta el separador en móviles */
   }
 }

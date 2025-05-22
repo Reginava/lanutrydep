@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="instrucciones.css">
     <title>Instrucciones</title>
+    <link rel="icon" href="RN.png" type="image/x-icon">
 </head>
+
 <body>
     <div class="contenedor">
         <header>
@@ -30,63 +34,290 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Inicio</a>
                             </li>
-                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Atención nutricional
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="atencion_nutricional.html">Descripción</a></li>
-                                <li><a class="dropdown-item" href="pago.html">Métodos de pago</a></li>
-                                <li><a class="dropdown-item active" aria-current="page" href="instrucciones.html">Instrucciones</a></li>
-                            </ul>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Atención nutricional
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="atencion_nutricional.html">Descripción</a></li>
+                                    <li><a class="dropdown-item" href="pago.html">Métodos de pago</a></li>
+                                    <li><a class="dropdown-item active" aria-current="page"
+                                            href="instrucciones.html">Instrucciones</a></li>
+                                </ul>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="sobremi.html">Sobre mí</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!--fin de la barra de navegación-->
         </header>
+
         <main>
-            <div id="password-protect" class="container text-center">
-                <h3>Introduce la contraseña para acceder</h3>
+            <div id="password-protect">
+                <h5>Introduce la contraseña para acceder*</h5>
+                <br>
                 <div class="row justify-content-center">
                     <div class="col-md-4">
                         <form onsubmit="return checkPassword(event)">
-                            <div class="mb-3">
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-                            <p id="error-message" class="text-danger mt-3" style="display: none;">Contraseña incorrecta. Intenta de nuevo.</p>
+                            <div class="mb-3"> <input type="password" class="form-control" id="password"
+                                    placeholder="Contraseña"> </div> <button type="submit"
+                                class="btn btn-primary w-100">Ingresar</button>
+                            <p id="error-message" class="text-danger mt-3" style="display: none;">Contraseña incorrecta.
+                                Intenta de nuevo.</p>
                         </form>
                     </div>
+
+                    <p id="aclaracion">*La contraseña se te otorgará por medio de WhatsApp.</p>
                 </div>
             </div>
-
             <div id="protected-content" style="display: none;">
                 <img src="instrucciones.svg" alt="instrucciones">
-                <h2>para iniciar el programa nutricional integral</h2>
+                <h5>para iniciar el programa nutricional integral</h5>
                 <div class="divider"> ✦◦—————————◦✦◦—————————◦✦ </div>
                 <p>¡Gracias por confiar en mí! Tu proceso comienza aquí. Asegúrate de completar los
                     siguientes pasos para que podamos crear un plan que se adapte a tus necesidades:
-                    <br>
-                    Paso 1: Completa el formulario de Historia Clínico-Nutricia [enlace]
-                    <br>
-                    Paso 2: Sigue nuestra Guía de Mediciones [enlace]
-                    <br>
-                    Paso 3: Envía las fotos de la información nutrimental de tus productos [enlace a guía]
-                    <br>
-                    Una vez que hayas completado todos los pasos, trabajaremos en tu plan personalizado y nos pondremos en contacto para agendar tu videollamada de explicación y educación nutricional.
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                1. Análisis de Laboratorio
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Acude al laboratorio de tu preferencia y solicita una Química Sanguínea y una
+                                    Biometría Hemática. Envíame tus resultados en cuanto los tengas. Si necesitas
+                                    recomendaciones de laboratorios, no dudes en preguntarme.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2. Sigue la Guía de Mediciones
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p class="subtitle">GUÍA DE MEDICIONES</p>
+                                <p>Lo que necesitas:</p>
+                                <ul>
+                                    <li>Báscula.</li>
+                                    <li>Cinta de costurera.</li>
+                                    <li>Un lugar para anotar tus medidas.</li>
+                                    <li>Delineador o plumín no tóxico.</li>
+                                    <li>Una persona que te auxilie (de preferencia).</li>
+                                </ul>
+                                <p>Antes de empezar:</p>
+
+                                <ul>
+                                    <li>Retírate la mayor cantidad de ropa posible y quítate los accesorios.</li>
+                                    <li>Anota las condiciones en las que tomarás las medidas (fecha, hora, si estás en
+                                        ayuno, si
+                                        ya hiciste del baño, etc.). Ejemplo: "20 de junio 2025. Estoy en ayuno, ya hice
+                                        del baño, me tomé un vaso de agua,
+                                        son las 7 am, me medirá mi pareja."</li>
+                                </ul>
+                                <br>
+                                <p>PASOS PARA LAS MEDICIONES</p>
+                                <p>1. Peso:</p>
+                                <ul>
+                                    <li>Coloca la báscula en un lugar nivelado y de superficie regular.</li>
+                                    <li>Sube a la báscula sin zapatos ni accesorios.</li>
+                                    <li>Párate con los pies separados a la altura de las caderas, brazos a los costados
+                                        y vista
+                                        al frente.</li>
+                                    <li>Toma la lectura del peso y anótalo.</li>
+                                </ul>
+                                <p>2. Estatura:</p>
+                                <ul>
+                                    <li>Usa la medición de tu última visita médica. Si no la tienes, acude a una
+                                        farmacia para
+                                        obtener este dato.</li>
+                                    <li>Asegúrate de medirte sin calzado ni peinados altos.</li>
+                                </ul>
+                                <p>3. Circunferencia de cintura:</p>
+                                <ul>
+                                    <li>Coloca dos dedos arriba del ombligo y marca este punto con una cruz pequeña.
+                                    </li>
+                                    <li>Rodea tu cintura pasando la cinta métrica por este punto, asegurándote de que
+                                        quede
+                                        paralela al piso y no se voltee.</li>
+                                    <li>Inhala profundamente, exhala y toma la lectura en el punto donde la cinta cruza
+                                        su
+                                        inicio.</li>
+                                </ul>
+                                <p>4. Circunferencia de brazo:</p>
+                                <ul>
+                                    <li>Flexiona tu brazo no dominante a 90° con la palma hacia arriba.</li>
+                                    <li>Marca el punto medio entre el codo y el hombro.</li>
+                                    <li>Extiende el brazo y rodea la cinta métrica por el punto marcado.</li>
+                                    <li>Toma la lectura donde la cinta cruza su inicio.</li>
+                                </ul>
+                                <p>5. Circunferencia de cadera:</p>
+                                <ul>
+                                    <li>De pie, identifica el punto de mayor relieve de tus glúteos.</li>
+                                    <li>Rodea la cinta métrica por esta área, asegurándote de que quede paralela al
+                                        piso.</li>
+                                    <li>Toma la lectura en el punto donde la cinta cruza su inicio.</li>
+                                </ul>
+                                <p>6. Circunferencia de muñeca:</p>
+                                <ul>
+                                    <li>Ubica los huesitos que sobresalen de tu muñeca.</li>
+                                    <li>Rodea la cinta métrica justo por encima de ellos.</li>
+                                    <li>Toma la lectura en el punto donde la cinta cruza su inicio.</li>
+                                </ul>
+                                <p>7. Circunferencia de cuello:</p>
+                                <ul>
+                                    <li>Identifica la manzana de Adán y asegúrate de mantener la cabeza erguida mirando
+                                        al
+                                        frente.</li>
+                                    <li>Rodea la cinta métrica justo debajo de la manzana de Adán.</li>
+                                    <li>Toma la lectura en el punto donde la cinta cruza su inicio.</li>
+                                </ul>
+                                <p>Notas Adicionales:</p>
+                                <ul>
+                                    <li>Es importante que las mediciones sean lo más precisas posible para obtener un
+                                        análisis
+                                        adecuado.</li>
+                                    <li>Si tienes dudas al realizar alguna medición, contáctame para orientación.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                3. Llena tu Historia Clínico-Nutricia
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Por favor, ingresa al formulario para completar tu <a
+                                        href="https://forms.gle/2UwHZHLhP8orABEQ8" class="enlace-hover"
+                                        target="_blank">Historia Clínico-Nutricia<i class="bi bi-link-45deg"></i></a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                4. Envío de la información nutricional
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p class="subtitle">GUÍA DE ENVÍO DE LA IMFORMACIÓN NUTRIMENTAL</p>
+                                <p>Para brindarte una asesoría personalizada y adecuada, necesito conocer todos los
+                                    alimentos industrializados que consumes normalmente. Sigue las instrucciones a
+                                    continuación para proporcionarme la información de manera precisa.</p>
+                                <p>1. Identifica los alimentos industrializados:</p>
+                                <ul>
+                                    <li>Ubica todos los alimentos industrializados que consumes regularmente.
+                                    <li>Estos son productos que vienen en empaque, como latas, botellas, frascos o
+                                        cajas. Asegúrate de incluir tanto alimentos como bebidas.</li>
+                                </ul>
+
+                                <p>2. Fotografía la Información Nutrimental:</p>
+                                <ul>
+                                    <li>Busca la sección de Información Nutrimental en el empaque, generalmente marcada
+                                        con la leyenda "Información Nutrimental".</li>
+                                    <li>Toma una foto legible, asegurándote de que la información esté enfocada y
+                                        completa.</li>
+                                </ul>
+                                <p>3. Fotografía los Ingredientes:</p>
+                                <ul>
+                                    <li>Busca la sección de Ingredientes en el empaque, generalmente marcada con la
+                                        leyenda "Ingredientes".</li>
+                                    <li>Toma una foto clara y enfocada de esta sección.</li>
+                                    <li>Si los Ingredientes y la Información Nutrimental caben en una sola foto sin
+                                        perder legibilidad, puedes tomarlas juntas.</li>
+                                </ul>
+                                <p>4. Envía tus fotos</p>
+                                <p>Una vez que hayas tomado todas las fotos necesarias, es momento de enviármelas.
+                                    Asegúrate de que las imágenes sean nítidas y que la información sea legible.
+                                    Puedes enviarme las fotos de dos maneras diferentes. Aquí te explico cómo hacerlo:
+                                </p>
+                                <ul>
+                                    <li>Opción A: Crear un álbum en Google Fotos y compartirlo.</li>
+                                    <ul id="instgf">
+                                        <li>1. Crea un álbum en Google Fotos con todas las fotos de los productos. </li>
+                                        <li>2. Ve a Google Fotos.</li>
+                                        <li>3. Selecciona todas las fotos que tomaste de la Información Nutrimental y
+                                            los Ingredientes.</li>
+                                        <li>4. Toca el ícono “+” y selecciona “Álbum” para crear uno nuevo. Asígnale un
+                                            nombre.</li>
+                                        <li>5. Añade descripciones a cada foto: Entra a cada imagen y desliza hacia
+                                            arriba para agregar el nombre y marca del producto.</li>
+                                        <li>6. Comparte el álbum: Toca el ícono de compartir (tres puntos conectados) y
+                                            selecciona "Crear enlace".</li>
+                                        <li>7. Copia el enlace generado y pégalo en un mensaje de WhatsApp para
+                                            enviármelo.</li>
+                                    </ul>
+                                    <li>Opción B: Enviar las fotos directamente por WhatsApp.</li>
+                                    <ul id="instwa">
+                                        <li>1. Escribe el nombre y marca del producto en cada foto antes de enviarla.
+                                        </li>
+                                        <li>2. Envía las fotos.</li>
+                                    </ul>
+
+                                    <p id=nota>Nota Importante:
+                                        No borres las fotos hasta que tengamos nuestra videollamada, ya que podrían ser
+                                        necesarias para la revisión.
+                                    </p>
+                                    <p id=recomendacion>Recomendaciones Finales:
+                                        Revisa que las fotos sean nítidas y completas antes de enviarlas.
+                                        Si tienes dudas durante el proceso, contáctame para orientarte.</p>
+                                    <p id="contacto">Si tienes alguna pregunta o necesitas ayuda, no dudes en
+                                        contactarme por <a href="https://wa.me/525612474957"
+                                            target="_blank">WhatsApp</a>.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                5. Contacto y agendamiento
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>Una vez que hayas completado todos los pasos anteriores, me pondré en contacto
+                                    contigo en un plazo de 48 horas para aclarar cualquier aspecto y agendar nuestra
+                                    primera videollamada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p><strong><i class="bi bi-exclamation-diamond"></i> Importante:</strong> Una vez que recibas estas
+                    instrucciones, tendrás un plazo máximo de 15 días para completar todos los pasos indicados. Si no se
+                    cumplen dentro de este tiempo, será necesario realizar un nuevo pago para reactivar tu acceso al
+                    programa. Esto garantiza que la información que envíes sea reciente y adecuada para tu evaluación.
                 </p>
             </div>
         </main>
+        <footer>
+            <p>&copy; 2025 Lanutrydep. Todos los derechos reservados.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Lanutrydep. Todos los derechos reservados.</p>
-    </footer>
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

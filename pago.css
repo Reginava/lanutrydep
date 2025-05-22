@@ -1,20 +1,28 @@
-html,
 body {
   height: 100%;
   padding-top: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: "Asap", sans-serif;
+  background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
 }
 
-body {
-  background-color: #fafafa;
+:root {
+  --color-primary: #aa1945;
+  --color-secondary: #f15a28;
+  --color-accent: #009688;
+  --text-color: #6c757d;
+  --navbar-logo-width: 200px;
+  --navbar-hover: var(--color-secondary); /* Reutiliza otra variable 
+*/
+  --font-family-secondary: "Borel", cursive;
+  --font-family-primary: "Asap", sans-serif;
 }
 
 .contenedor {
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
-  /* Asigna proporciones para cada sección */
   height: 100vh;
-  /* Usa el 100% del alto de la ventana */
   align-items: center;
 }
 
@@ -23,47 +31,97 @@ Por ejemplo, --#{$prefix}navbar-padding-x en realidad es --bs-navbar-padding-x. 
 
 /* Mostrar solo el logo grande en pantallas grandes */
 .navbar {
-  --bs-navbar-hover-color: #f15a28;
+  --bs-navbar-hover-color: var(--navbar-hover);
+  --bs-navbar-padding-y: 0;
 }
 
+.navbar-nav {
+  --bs-navbar: navbar-right;
+}
+
+/* Aligns the navigation items to the right when the navbar is expanded on large screens */
 .navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
 }
 
-.logo-chico {
-  display: none;
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: var(--color-accent);
+  --bs-dropdown-link-hover-color: var(--color-secondary);
+}
+
+.enlace-hover {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.enlace-hover:hover,
+.enlace-hover:focus {
+  /*:focus para accesibilidad */
+  color: var(--navbar-hover);
 }
 
 .logo-grande {
-  width: 200px;
+  width: var(--navbar-logo-width);
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+.logo-chico {
+  display: none;
+  width: 70px;
+  height: auto;
+  transition: width 0.3s ease;
 }
 
 main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 5% 21% 5% 21%;
+  margin: 6% 21% 2% 21%;
 }
 
-main img {
-  width: 400px;
-  align-content: center;
+main p {
+  text-align: center;
 }
 
-h2 {
+#title {
+  font-family: var(--font-family-secondary);
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 40px;
+  margin: 1rem 0 0 0;
+}
+
+#sub {
   text-align: center;
   font-style: italic;
-  font-size: 22px;
+  line-height: 1;
+  font-size: 21px;
+  margin: -0.2rem 0 1rem 0;
+}
+
+.card.w-50 {
+  margin: 10px 0 15px 0;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 5%;
+}
+
+h5 {
+  text-align: center;
   margin-bottom: 0%;
 }
 
-#bbva p {
-  font-size: 18px;
-  line-height: 1;
+.card.w-50 .card-text li {
+  margin-bottom: 0.5rem;
+  list-style-type: none; /* Elimina los puntos de la lista */
 }
 
-#titulo {
-font-size: 22px;
+ul {
+  padding-left: 0; /* Elimina el padding izquierdo de la lista */
 }
 
 .btn {
@@ -71,86 +129,119 @@ font-size: 22px;
   --bs-btn-border-color: transparent;
   --bs-btn-hover-bg: #f15a28;
   --bs-btn-hover-border-color: transparent;
-  --bs-btn-font-size: 18px;
-}
-
-
-.divider {
-  display: flex;
-  align-items: center;
-  color: #f15a28;
-  /* Color de las figuras */
-  font-size: 18px;
-  /* Tamaño de las figuras */
-  position: relative;
-  margin-bottom: 2%;
-}
-
-
-main p {
-  text-align: center;
-  font-size: large;
-  line-height: 1.6;
 }
 
 .comprobante {
-  display:flex;
+  display: flex;
   flex-direction: row;
 }
 
 .bi-arrow-90deg-down {
   margin: 5px 10px 0 10px;
-  transform: scalex(-1)
+  transform: scalex(-1);
 }
 
 footer {
-  text-align: center;
-  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+  margin: auto 21% auto 21%;
 }
 
-@media(max-width:768px) {
+footer p {
+  margin-top: auto;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  /* Tablet → móvil */
+
+  body {
+    font-size: 13px;
+  }
 
   .contenedor {
-    grid-template-rows: 1fr 1fr 1fr;
-    /* Distribuye el espacio equitativamente */
+    grid-template-rows: 50px auto 50px;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-font-size: 13px;
   }
 
   .logo-grande {
     display: none;
   }
-
   .logo-chico {
     display: block;
-    width: 100px;
   }
 
   main {
-    margin: 5% 10% 5% 10%;
+    margin: 3% 10% 3% 10%;
   }
 
-  main img {
-    width: 250px;
+  #title {
+    text-align: center;
+    font-size: 25px;
   }
 
-  h2 {
-    font-size: small;
+  #sub {
+    font-size: 15px;
   }
 
-  .divider {
-    display: flex;
-    align-items: center;
-    color: #f15a28;
-    font-size: 12px;
-    position: relative;
-    margin-bottom: 2%;
+  .card.w-50 {
+    margin: 8px 0 10px 0;
+    min-width: 260px; /* Asegura que la tarjeta no sea demasiado estrecha */
+  }
+
+  .card.w-50 .card-text li {
+    margin-bottom: 0.3rem;
+  }
+
+  h3 {
+    margin-top: 5%;
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
   }
 
   main p {
     font-size: small;
-    line-height: 1.4;
+  }
+
+  .btn {
+    --bs-btn-font-size: 13px;
   }
 
   footer {
+    text-align: center;
+    margin: auto 10% auto 10%;
+  }
+
+  footer p {
     font-size: x-small;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Móviles pequeños */
+  .logo-chico {
+    width: 50px; /* Ajuste extra para pantallas < 480px */
   }
 }

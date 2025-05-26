@@ -5,6 +5,7 @@ body {
   background-color: #fafafa;
   line-height: 1.4;
   font-size: 17px;
+  text-decporation: none;
 }
 
 :root {
@@ -166,6 +167,13 @@ footer a:hover {
 @media (max-width: 768px) {
   /* Tablet → móvil */
 
+  .logo-grande {
+    display: none;
+  }
+  .logo-chico {
+    display: block;
+    width: 100px; /* Tamaño base para móviles */
+  }
   body {
     font-size: 13px;
   }
@@ -182,16 +190,20 @@ footer a:hover {
     --bs-dropdown-font-size: 13px;
   }
 
-  .logo-grande {
-    display: none;
-  }
-  .logo-chico {
-    display: block;
-  }
-
   main {
     margin: 3% 10% 3% 10%;
   }
+
+  h3 {
+    margin-top: 5%;
+    font-size: 19px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+
 
   #title {
     text-align: center;
@@ -209,19 +221,6 @@ footer a:hover {
 
   .card.w-50 .card-text li {
     margin-bottom: 0.3rem;
-  }
-
-  h3 {
-    margin-top: 5%;
-    font-size: 20px;
-  }
-
-  h5 {
-    font-size: 16px;
-  }
-
-  main p {
-    font-size: small;
   }
 
   .btn {

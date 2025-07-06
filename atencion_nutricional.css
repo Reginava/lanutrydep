@@ -1,0 +1,349 @@
+body {
+  height: 100%;
+  padding-top: 0;
+  font-family: "Asap", sans-serif;
+  background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+:root {
+  --color-primary: #aa1945;
+  --color-secondary: #f15a28;
+  --color-accent: #009688;
+  --text-color: #6c757d;
+  --navbar-logo-width: 200px;
+  --navbar-hover: var(--color-secondary);
+  --font-family-secondary: "Borel", cursive;
+  --font-family-primary: "Asap", sans-serif;
+  --main-text-align: justify;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* Asigna proporciones para cada sección */
+  height: 100vh;
+  /* Usa el 100% del alto de la ventana */
+  align-items: center;
+}
+
+.navbar {
+  --bs-navbar-hover-color: var(--navbar-hover);
+  --bs-navbar-padding-y: 0;
+}
+
+.navbar-nav {
+  --bs-navbar: navbar-right;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: var(--color-accent);
+  --bs-dropdown-link-hover-color: var(--color-secondary);
+}
+
+.enlace-hover {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.enlace-hover:hover,
+.enlace-hover:focus {
+  /*:focus para accesibilidad */
+  color: var(--navbar-hover);
+}
+
+.logo-grande {
+  width: var(--navbar-logo-width);
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+.logo-chico {
+  display: none;
+  width: 100px;
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 6% 21% 2% 21%;
+}
+
+/* Corrige alineación de párrafos principales excluyendo títulos especiales 
+   (Necesario para sobrescribir Bootstrap) */
+main > p:not(#title):not(#sub) {
+  text-align: var(--main-text-align) !important;
+  width: 100%;
+  display: block;
+}
+
+#title {
+  font-family: var(--font-family-secondary);
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 40px;
+  margin: 1.6rem 0 -0.5rem 0;
+}
+
+#sub {
+  text-align: center;
+  font-style: italic;
+  line-height: 1;
+  font-size: 21px;
+  margin: -0.2rem 0 0 0;
+}
+
+.divider {
+  text-align: center; /* Centra la línea */
+  margin: 0 0 40px 0;
+}
+
+.linea-oleo {
+  height: 1em; /* 60% del tamaño del subtítulo */
+  width: 85%; /* Controla el ancho (o usa 100% para ocupar todo el contenedor) */
+  margin: 5px auto; 
+  display: block;
+  opacity: 0.8;
+  transition: all 0.3s ease; /* Para efectos hover */
+}
+
+/* Efecto al pasar el mouse */
+.linea-oleo:hover {
+  opacity: 1;
+  transform: scaleY(1.05); /* Ligero crecimiento vertical */
+}
+
+main ul:not(.card-body ul) {
+  padding-left: 1.5rem; /* Sangría estándar para listas */
+  list-style-type: disc; /* Viñetas por defecto */
+  margin-bottom: 1rem; /* Espaciado consistente */
+  text-align: var(--main-text-align);
+}
+
+.row {
+  margin-top: 3px;
+  min-height: 90%;
+}
+
+.mb-3 {
+  margin-bottom: 0.5rem !important;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.card-header {
+  min-height: 75px;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-header h5 {
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+  font-size: 16px;
+}
+
+/* Estilo para listas dentro de cards */
+.card-body ul {
+  padding-left: 0.5rem; /* Un poco menos de sangría en cards */
+}
+
+/* Estilo para elementos de lista */
+li {
+  margin-bottom: 0.35rem; /* Espaciado entre items */
+}
+
+.btn {
+  --bs-btn-bg: #009688;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: #f15a28;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-font-size: 18px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+  margin: auto 21% auto 21%;
+  text-align: center;
+}
+
+footer p {
+  margin-top: auto;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-secondary);
+}
+
+/* Asegurar que todos los párrafos en main tengan justificación */
+main p {
+  text-align: justify;
+}
+
+/* Opcional: si quieres que los títulos mantengan alineación centrada */
+main h4,
+main h5,
+main h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  /* Tablet → móvil */
+  body {
+    font-size: 13px;
+  }
+
+  /* Hay problema para el ipad mini 768 x 1024*/
+  .contenedor {
+    grid-template-rows: 50px auto 50px;
+  }
+
+  .logo-grande {
+    display: none;
+  }
+  .logo-chico {
+    display: block;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-font-size: 13px;
+  }
+
+  main {
+    margin: 4% 10% 3% 10%;
+  }
+
+  h2 {
+    font-size: 20.5px;
+  }
+
+  h4 {
+    font-size: 17.5px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  #title {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  #sub {
+    font-size: 15px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+    font-size: 12px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .row {
+    padding: 0 15px 2px 15px;
+  }
+
+
+  li {
+    margin-bottom: 0.2rem; /* Espaciado entre items */
+  }
+
+  .card-header {
+    min-height: 40px;
+  }
+
+  .card-title {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    padding: 1rem;
+  }
+
+  dl,
+  ol,
+  ul {
+    margin-bottom: 0rem; /* Espaciado consistente entre listas */
+  }
+
+  .mt-3 {
+    margin-top: 0.5rem !important;
+  }
+
+  .h-90 {
+    height: 80%;
+  }
+
+  .btn {
+    --bs-btn-font-size: 15px;
+  }
+
+  footer {
+    margin: auto 10% auto 10%;
+  }
+
+  footer p {
+    font-size: x-small;
+    min-height: 50px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Móviles pequeños */
+  .logo-chico {
+    width: 80px; /* Ajuste extra para pantallas < 480px */
+  }
+}

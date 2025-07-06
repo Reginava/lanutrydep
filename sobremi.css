@@ -1,0 +1,263 @@
+body {
+  height: 100%;
+  padding-top: 0;
+  font-family: "Asap", sans-serif;
+  background-color: #fafafa;
+  line-height: 1.4;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+:root {
+  --color-primary: #aa1945;
+  --color-secondary: #f15a28;
+  --color-accent: #009688;
+  --text-color: #6c757d;
+  --navbar-logo-width: 200px;
+  --navbar-hover: var(--color-secondary);
+  --font-family-secondary: "Borel", cursive;
+  --font-family-primary: "Asap", sans-serif;
+  --main-text-align: justify;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* Asigna proporciones para cada sección */
+  height: 100vh;
+  /* Usa el 100% del alto de la ventana */
+  align-items: center;
+}
+
+.navbar {
+  --bs-navbar-hover-color: var(--navbar-hover);
+  --bs-navbar-padding-y: 0;
+}
+
+.navbar-nav {
+  --bs-navbar: navbar-right;
+}
+
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: var(--color-accent);
+  --bs-dropdown-link-hover-color: var(--color-secondary);
+}
+
+.enlace-hover {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.enlace-hover:hover,
+.enlace-hover:focus {
+  /*:focus para accesibilidad */
+  color: var(--navbar-hover);
+}
+
+.logo-grande {
+  width: var(--navbar-logo-width);
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+.logo-chico {
+  display: none;
+  width: 100px;
+  height: auto;
+  transition: width 0.3s ease;
+}
+
+main {
+  margin: 6% 21% 2% 21%;
+  position: relative;
+  /* Permite que los hijos sobresalgan */
+  overflow: visible;
+  /* Permite que el contenido sobresalga */
+}
+
+.mi-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-left: -50px;
+  /* Desplaza SOLO el grid hacia la izquierda */
+  align-items: center;
+}
+
+
+.mi-grid img {
+  width: 120%;
+  /* Asegura que la imagen sea más ancha que su contenedor */
+  max-width: 250px;
+  /* Limita el ancho máximo de la imagen */
+  margin: -1em 0 -2em 0;
+  /* Ajusta el margen para que la imagen sobresalga */
+  z-index: 1;
+}
+
+.mi-grid .texto {
+  padding-left: 20px;
+  /* Añade espacio entre la imagen y el texto */
+}
+
+#title {
+  font-family: var(--font-family-secondary);
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 40px;
+  margin: 1.6rem 0 0 0;
+}
+
+main p {
+  text-align: var(--main-text-align);
+}
+
+.redes-sociales {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1.5rem 0.5rem;
+  align-items: start;
+  margin: 0 0 1rem 0;
+}
+
+.redes-sociales div {
+  display: flex;
+  align-items: flex-start;
+  font-size: 15px;
+  text-align: left;
+}
+
+
+.socialicon {
+  width: 35px;
+  height: auto;
+  margin: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.socialicon:hover {
+  transform: scale(1.2);
+  /* Efecto de zoom al pasar el cursor */
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  min-height: 10vh;
+  /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+  margin: auto 21% auto 21%;
+  text-align: center;
+}
+
+footer p {
+  margin-top: auto;
+  font-size: 15px;
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-secondary);
+}
+
+@media(max-width:768px) {
+
+  body {
+    font-size: 13px;
+  }
+
+  .contenedor {
+    grid-template-rows: 50px auto 50px;
+  }
+
+  .logo-grande {
+    display: none;
+  }
+
+  .logo-chico {
+    display: block;
+  }
+
+  .navbar-nav {
+    align-items: flex-end;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-font-size: 13px;
+  }
+
+  main {
+    margin: 4% 10% 4% 10%;
+  }
+
+  main p {
+    line-height: 1.4;
+    font-size: 13px;
+  }
+
+  .mi-grid {
+    margin-left: -100px;
+    /* Desplaza SOLO el grid hacia la izquierda */
+  }
+
+  .mi-grid img {
+    width: 120%;
+    max-width: 200px;
+  }
+
+  .mi-grid .texto {
+    padding-left: 40px;
+    /* Añade espacio entre la imagen y el texto */
+  }
+
+  #title {
+    text-align: center;
+    font-size: 25px;
+  }
+
+
+  .redes-sociales {
+    gap: 1rem;
+  }
+
+  .redes-sociales div {
+    font-size: 11px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .socialicon {
+    width: 20px;
+  }
+
+  footer {
+    margin: auto 10% auto 10%;
+  }
+
+  footer p {
+    font-size: x-small;
+    min-height: 50px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Móviles pequeños */
+  .logo-chico {
+    width: 80px;
+    /* Ajuste extra para pantallas < 480px */
+  }
+
+}

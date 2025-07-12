@@ -42,7 +42,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item active" aria-current="page"
                       href="atencion_nutricional.html">Descripción</a></li>
-                  <li><a class="dropdown-item" href="pago.html">Métodos de pago</a></li>
+                  <li><a class="dropdown-item" href="pago.html">Inscripción al programa</a></li>
                   <li><a class="dropdown-item" href="instrucciones.html">Instrucciones</a></li>
                 </ul>
               <li class="nav-item">
@@ -60,7 +60,7 @@
       <div class="divider">
         <img src="imagenes\linea-oleo.svg" alt="Línea decorativa" class="linea-oleo">
       </div>
-      <p>Tu salud no es solo una consulta; es un proceso de aprendizaje y adaptación. Con este Programa
+      <p>Tu salud no es solo una consulta; es un proceso de aprendizaje y adaptación🌱. Con este Programa
         Nutricional Integral, estaré a tu lado en cada paso, asegurándome de que logres tus objetivos de manera
         sostenida y
         efectiva.</p>
@@ -144,10 +144,29 @@
     </main>
     <footer>
       <p>&copy; 2025 Lanutrydep. Todos los derechos reservados. | Desarrollado por<a href="sobremi.html"> Gómez-Vargas,
-          Regina</a> | Versión 1.0 🌱</p>
+          Regina</a> | Versión 1.0⚡</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </div>
+  <!-- Firebase Analytics SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDZ7CUGOh5e83AkdWx_05SuLIPDeYagsvQ",
+    authDomain: "lanutrydep.firebaseapp.com",
+    projectId: "lanutrydep",
+    storageBucket: "lanutrydep.appspot.com",
+    messagingSenderId: "371810510977",
+    appId: "1:371810510977:web:134177a0677d478005c580",
+    measurementId: "G-TS53GNSFZT"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
 </body>
 
 </html>

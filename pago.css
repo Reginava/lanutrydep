@@ -5,7 +5,6 @@ body {
   background-color: #fafafa;
   line-height: 1.4;
   font-size: 17px;
-  text-decporation: none;
 }
 
 :root {
@@ -83,7 +82,8 @@ main {
 }
 
 main p {
-  text-align: center;
+  text-align: var(--main-text-align);
+  width: 100%;
 }
 
 #title {
@@ -91,58 +91,70 @@ main p {
   text-align: center;
   color: var(--color-primary);
   font-size: 40px;
-  margin: 1rem 0 0 0;
+  margin: 1.6rem 0 1rem 0;
 }
 
-#sub {
+
+.card.w-80 {
+  margin: -1px 0 20px 0;
+  align-self: flex-start;
+}
+
+li {
+  margin-bottom: 0.35rem;
+  /* Espaciado entre items */
+}
+
+.card-text li {
+  list-style-type: none;
+}
+
+#next .card-text ol,
+ul {
+  padding: 0.3rem;
+}
+
+.comprobante {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  align-self: start;
+  margin-bottom: 1.2rem;
+}
+
+.comprobante p {
+  margin: 0;
+  text-align: left;
+}
+
+
+h4 {
+  margin: 1rem 0 1rem 0;
   text-align: center;
-  font-style: italic;
-  line-height: 1;
-  font-size: 21px;
-  margin: -0.2rem 0 0 0;
 }
 
 .divider {
-  text-align: center; /* Centra la línea */
   margin: 0 0 20px 0;
 }
 
 .linea-oleo {
-  height: 1em; /* 60% del tamaño del subtítulo */
-  width: 85%; /* Controla el ancho (o usa 100% para ocupar todo el contenedor) */
+  height: 1em;
+  /* 60% del tamaño del subtítulo */
+  width: 85%;
+  /* Controla el ancho (o usa 100% para ocupar todo el contenedor) */
   margin: 5px auto;
   display: block;
   opacity: 0.8;
-  transition: all 0.3s ease; /* Para efectos hover */
+  transition: all 0.3s ease;
+  /* Para efectos hover */
 }
 
 /* Efecto al pasar el mouse */
 .linea-oleo:hover {
   opacity: 1;
-  transform: scaleY(1.05); /* Ligero crecimiento vertical */
-}
-
-.card.w-50 {
-  margin: 10px 0 15px 0;
-  text-align: center;
-}
-
-h3 {
-  margin-top: 5%;
-}
-
-h5 {
-  text-align: center;
-  margin-bottom: 0%;
-}
-
-.card.w-50 .card-text li {
-  margin-bottom: 0.5rem;
-  list-style-type: none; /* Elimina los puntos de la lista */
-}
-
-ul {
-  padding-left: 0; /* Elimina el padding izquierdo de la lista */
+  transform: scaleY(1.05);
+  /* Ligero crecimiento vertical */
 }
 
 .btn {
@@ -150,16 +162,20 @@ ul {
   --bs-btn-border-color: transparent;
   --bs-btn-hover-bg: #f15a28;
   --bs-btn-hover-border-color: transparent;
-}
-
-.comprobante {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 190px;
 }
 
-.bi-arrow-90deg-down {
-  margin: 5px 10px 0 10px;
-  transform: scalex(-1);
+#next ul {
+  padding-left: 1.5rem;
+  /* Sangría estándar para listas */
+  list-style-type: disc;
+  /* Viñetas por defecto */
+  margin-bottom: 1rem;
+  /* Espaciado consistente */
+  text-align: var(--main-text-align);
 }
 
 footer {
@@ -191,6 +207,7 @@ footer a:hover {
   .logo-grande {
     display: none;
   }
+
   .logo-chico {
     display: block;
   }
@@ -216,13 +233,9 @@ footer a:hover {
     margin-right: 10%;
   }
 
-  h3 {
-    margin-top: 5%;
-    font-size: 19px;
-  }
 
-  h5 {
-    font-size: 16px;
+  h4 {
+    font-size: 17.5px;
   }
 
   #title {
@@ -236,15 +249,25 @@ footer a:hover {
 
   .card.w-50 {
     margin: 8px 0 10px 0;
-    min-width: 260px; /* Asegura que la tarjeta no sea demasiado estrecha */
+    min-width: 260px;
+    /* Asegura que la tarjeta no sea demasiado estrecha */
   }
 
   .card.w-50 .card-text li {
     margin-bottom: 0.3rem;
   }
 
+  .comprobante {
+    grid-template-columns: auto auto;
+    gap: 15px;
+    margin-bottom: 1rem;
+  }
+
   .btn {
     --bs-btn-font-size: 13px;
+    min-width: 90px;
+    max-width: 120px;
+    height: auto;
   }
 
   footer {
@@ -259,8 +282,10 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+
   /* Móviles pequeños */
   .logo-chico {
-    width: 80px; /* Ajuste extra para pantallas < 480px */
+    width: 80px;
+    /* Ajuste extra para pantallas < 480px */
   }
 }

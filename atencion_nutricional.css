@@ -5,7 +5,6 @@ body {
   background-color: #fafafa;
   line-height: 1.4;
   font-size: 17px;
-  text-decoration: none;
 }
 
 :root {
@@ -81,7 +80,7 @@ main {
 
 /* Corrige alineación de párrafos principales excluyendo títulos especiales 
    (Necesario para sobrescribir Bootstrap) */
-main > p:not(#title):not(#sub) {
+main>p:not(#title):not(#sub) {
   text-align: var(--main-text-align) !important;
   width: 100%;
   display: block;
@@ -104,29 +103,41 @@ main > p:not(#title):not(#sub) {
 }
 
 .divider {
-  text-align: center; /* Centra la línea */
+  text-align: center;
+  /* Centra la línea */
   margin: 0 0 40px 0;
 }
 
 .linea-oleo {
-  height: 1em; /* 60% del tamaño del subtítulo */
-  width: 85%; /* Controla el ancho (o usa 100% para ocupar todo el contenedor) */
-  margin: 5px auto; 
+  height: 1em;
+  /* 60% del tamaño del subtítulo */
+  width: 85%;
+  /* Controla el ancho (o usa 100% para ocupar todo el contenedor) */
+  margin: 5px auto;
   display: block;
   opacity: 0.8;
-  transition: all 0.3s ease; /* Para efectos hover */
+  transition: all 0.3s ease;
+  /* Para efectos hover */
 }
 
 /* Efecto al pasar el mouse */
 .linea-oleo:hover {
   opacity: 1;
-  transform: scaleY(1.05); /* Ligero crecimiento vertical */
+  transform: scaleY(1.05);
+  /* Ligero crecimiento vertical */
+}
+
+h4 {
+  margin: 1rem 0 1rem 0;
 }
 
 main ul:not(.card-body ul) {
-  padding-left: 1.5rem; /* Sangría estándar para listas */
-  list-style-type: disc; /* Viñetas por defecto */
-  margin-bottom: 1rem; /* Espaciado consistente */
+  padding-left: 1.5rem;
+  /* Sangría estándar para listas */
+  list-style-type: disc;
+  /* Viñetas por defecto */
+  margin-bottom: 1rem;
+  /* Espaciado consistente */
   text-align: var(--main-text-align);
 }
 
@@ -174,12 +185,14 @@ main ul:not(.card-body ul) {
 
 /* Estilo para listas dentro de cards */
 .card-body ul {
-  padding-left: 0.5rem; /* Un poco menos de sangría en cards */
+  padding-left: 0.5rem;
+  /* Un poco menos de sangría en cards */
 }
 
 /* Estilo para elementos de lista */
 li {
-  margin-bottom: 0.35rem; /* Espaciado entre items */
+  margin-bottom: 0.35rem;
+  /* Espaciado entre items */
 }
 
 .btn {
@@ -193,7 +206,8 @@ li {
 footer {
   display: flex;
   justify-content: space-around;
-  min-height: 10vh; /* Ensure footer has enough height for consistent layout and to accommodate footer content */
+  min-height: 10vh;
+  /* Ensure footer has enough height for consistent layout and to accommodate footer content */
   margin: auto 21% auto 21%;
   text-align: center;
 }
@@ -227,6 +241,7 @@ main h2 {
 }
 
 @media (max-width: 768px) {
+
   /* Tablet → móvil */
   body {
     font-size: 13px;
@@ -240,6 +255,7 @@ main h2 {
   .logo-grande {
     display: none;
   }
+
   .logo-chico {
     display: block;
   }
@@ -292,7 +308,8 @@ main h2 {
 
 
   li {
-    margin-bottom: 0.2rem; /* Espaciado entre items */
+    margin-bottom: 0.2rem;
+    /* Espaciado entre items */
   }
 
   .card-header {
@@ -315,7 +332,8 @@ main h2 {
   dl,
   ol,
   ul {
-    margin-bottom: 0rem; /* Espaciado consistente entre listas */
+    margin-bottom: 0rem;
+    /* Espaciado consistente entre listas */
   }
 
   .mt-3 {
@@ -342,8 +360,10 @@ main h2 {
 }
 
 @media (max-width: 480px) {
+
   /* Móviles pequeños */
   .logo-chico {
-    width: 80px; /* Ajuste extra para pantallas < 480px */
+    width: 80px;
+    /* Ajuste extra para pantallas < 480px */
   }
 }

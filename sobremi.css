@@ -5,7 +5,6 @@ body {
   background-color: #fafafa;
   line-height: 1.4;
   font-size: 17px;
-  text-decoration: none;
 }
 
 :root {
@@ -90,13 +89,12 @@ main {
 
 
 .mi-grid img {
-  width: 120%;
+  width: 110%;
   /* Asegura que la imagen sea más ancha que su contenedor */
   max-width: 250px;
   /* Limita el ancho máximo de la imagen */
   margin: -1em 0 -2em 0;
   /* Ajusta el margen para que la imagen sobresalga */
-  z-index: 1;
 }
 
 .mi-grid .texto {
@@ -120,7 +118,7 @@ main p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  gap: 1.5rem 0.5rem;
+  gap: 1.5rem 1rem;
   align-items: start;
   margin: 0 0 1rem 0;
 }
@@ -144,6 +142,19 @@ main p {
   transform: scale(1.2);
   /* Efecto de zoom al pasar el cursor */
 }
+
+section#contacto.container.py-3 {
+  --bs-gutter-x: 0;
+}
+
+
+.btn {
+  --bs-btn-bg: var(--color-accent);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-bg: var(--color-secondary);
+  --bs-btn-hover-border-color: transparent;
+}
+
 
 footer {
   display: flex;
@@ -199,6 +210,10 @@ footer a:hover {
     margin: 4% 10% 4% 10%;
   }
 
+  h5 {
+    font-size: 16px;
+  }
+
   main p {
     line-height: 1.4;
     font-size: 13px;
@@ -239,6 +254,18 @@ footer a:hover {
 
   .socialicon {
     width: 20px;
+  }
+
+  .form-label {
+    margin: 0;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  .form-control {
+    font-size: 13px;
   }
 
   footer {
